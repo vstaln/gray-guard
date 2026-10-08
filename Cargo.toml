@@ -1,0 +1,17 @@
+[package]
+name = "gray-guard"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.91"
+license = "MIT"
+description = "guard plugin for the gray agent harness"
+
+[[bin]]
+name = "gray-guard"
+path = "src/main.rs"
+
+[dependencies]
+serde_json = "1"
+
+[profile.release]
+strip = true
