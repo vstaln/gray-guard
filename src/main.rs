@@ -1,9 +1,7 @@
 //! gray-guard — pattern-matched security warnings on file writes.
 //!
-//! Port of hermes' `security-guidance` plugin (patterns forked from
-//! Anthropic's claude-plugins-official, Apache-2.0): scans the content
-//! being written by write/edit/patch-shaped tools — and bash heredoc
-//! writes — for ~25 dangerous-code patterns (eval(, pickle.load,
+//! Scans the content written by write/edit/patch-shaped tools — and
+//! bash heredoc writes — for ~25 dangerous-code patterns (eval(, pickle.load,
 //! yaml.load sans SafeLoader, os.system, subprocess shell=True,
 //! dangerouslySetInnerHTML, verify=False, ECB, XXE parsers,
 //! ${{ github.event.* }} injection, torch.load sans weights_only, …).
@@ -202,7 +200,7 @@ fn scan_content(path: &str, content: &str) -> Vec<(&'static str, &'static str)> 
     hits
 }
 
-/// Strip a redundant leading "⚠️ Security Warning[:]" the ported
+/// Strip a redundant leading "⚠️ Security Warning[:]" the rule
 /// reminders carry — the block already leads with the warning marker.
 fn strip_marker(reminder: &str) -> &str {
     reminder

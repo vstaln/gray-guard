@@ -1,8 +1,13 @@
-# gray-guard
-
-Security warnings on file writes — a gray sidecar plugin port of hermes'
-`security-guidance` (patterns forked from Anthropic's
-claude-plugins-official, Apache-2.0).
+<p align="center">
+  <img src="assets/gray-logo.svg" alt="gray" width="96">
+</p>
+<h1 align="center">gray-guard</h1>
+<p align="center">Scans agent file writes against 25 dangerous-code rules and warns inline.</p>
+<p align="center">
+  <a href="https://github.com/vstaln/gray-guard/blob/main/LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-blue.svg"></a>
+  <img alt="gray plugin" src="https://img.shields.io/badge/gray-plugin-7aa2f7.svg">
+  <img alt="rust" src="https://img.shields.io/badge/built%20with-rust-orange.svg">
+</p>
 
 `tool/after` can't see call args, so `tool/before` stashes the write's
 `(path, content)` per `(session, tool)` in memory; `tool/after` scans it
@@ -59,3 +64,7 @@ cargo test
 cargo build --release
 gray account check
 ```
+
+---
+Part of the [gray](https://github.com/vstaln/gray) plugin ecosystem —
+the open-source AI agent harness. <https://gray.alignment.id>
