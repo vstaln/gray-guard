@@ -359,6 +359,7 @@ fn manifest() -> Value {
         "version": env!("CARGO_PKG_VERSION"),
         "protocol": "2.0",
         "tools": [],
+        "description": "block",
         "commands": [],
         "hooks": ["tool/before", "tool/after"],
     })
