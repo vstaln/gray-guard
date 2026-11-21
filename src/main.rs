@@ -640,10 +640,9 @@ mod tests {
         );
         assert!(scan_content("x.md", "eval(code)").is_empty());
         assert!(
-            scan_content("x.js", "eval(code)")
+            !scan_content("x.js", "eval(code)")
                 .iter()
                 .all(|h| h.0 != "eval_injection")
-                == false
         );
     }
 
